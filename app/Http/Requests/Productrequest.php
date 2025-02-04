@@ -22,8 +22,8 @@ class Productrequest extends FormRequest
     public function rules(): array
     {
         return [
-            'slug' => 'required|string|max:255|unique:products,slug,' . ($this->product ? $this->product->id : ''),
-            'prix' =>'required|numeric|min:0',
+            'slug' => 'required|string|max:255' . ($this->product ? $this->product->id : ''),
+            'base_price' => 'required|numeric|min:0', // Changed from 'prix' to 'base_price'
             'stock' => 'required|integer|min:0',
             'category_id' => 'required|exists:categories,id',
             'image_url' => 'nullable|file|image|max:2048',

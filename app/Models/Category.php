@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Category extends Model
 {
 
-    protected $fillable= [];
+    protected $fillable= ['image'];
 
     use HasFactory, SoftDeletes;
 
@@ -20,6 +20,11 @@ class Category extends Model
     {
         return $this->hasMany(Product::class);
     }
+
+    public function getProductCountAttribute()
+{
+    return $this->product()->count();
+}
 
     public function translations():MorphMany
     {

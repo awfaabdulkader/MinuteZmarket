@@ -22,6 +22,7 @@ class Categoryrequest extends FormRequest
     public function rules(): array
     {
         return [
+            'image' => 'nullable|image|max:2048',
             'translations' => 'required|array',
             'translations.*.language_code' => 'required|string|size:2',
             'translations.*.name' => 'required|string|max:255',
