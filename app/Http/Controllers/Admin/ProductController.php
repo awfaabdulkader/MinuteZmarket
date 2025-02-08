@@ -26,7 +26,7 @@ class ProductController extends Controller
         // Start the query and apply pagination
         $products = Product::with(['translations', 'category.translations', 'discounts'])
             ->latest()
-            ->paginate(4);
+            ->paginate(10);
     
         // After pagination, apply transformation to the paginated collection
         $products->getCollection()->transform(function ($product) {

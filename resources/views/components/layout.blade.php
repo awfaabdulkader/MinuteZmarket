@@ -51,6 +51,6 @@
  <script src="{{ asset('assets/js/pages/editable.init.js') }}"></script>
  <script src="{{ asset('assets/js/app.js') }}"></script>
  <script src="{{ asset('assets/js/pages/index.init.js') }}"></script>
-
+ <script src="{{ asset('assets/js/image-preview.js') }}"></script>
  <script src="{{ asset('assets/js/test.js') }}"></script>
  </body>

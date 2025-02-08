@@ -110,6 +110,8 @@ Route::middleware('web')->group(function () {
              ->name('home.language');
 
              Route::get('/clear/{product}', [ProductController::class, 'show'])->name('products.show');
+             Route::get('/store/about' , [storeController::class , 'showAbout'])->name('store/about');;
+             Route::get('/store/contact' , [storeController::class , 'showContact'])->name('store/contact');;
 });
 
 

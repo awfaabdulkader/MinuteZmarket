@@ -1210,7 +1210,7 @@ textarea:focus {
   padding: 20px 40px;
   color: #ffffff;
   border: none;
-  background-color: #253D4E;
+  background-color: #00877b;
   border-radius: 10px;
   font-family: "Quicksand", sans-serif;
 }
@@ -7001,6 +7001,7 @@ span.fi-rs-apps {
 }
 .main-menu > nav > ul > li ul.mega-menu {
   position: absolute;
+ 
   top: 100%;
   background-color: #ffffff;
   width: 16%;

@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use View;
 
 class StoreController extends Controller
 {
@@ -21,6 +22,24 @@ class StoreController extends Controller
         ])->whereHas('translations', function($query) use ($languageCode) {
             $query->where('language_code', $languageCode);
         });
+    }
+
+
+    public function showAbout()
+    {
+        $languageCode = session('user_language', 'fr');
+        $categories = $this->getCategories($languageCode);
+        
+        return view('HomeStore.page-about', compact('categories', 'languageCode'));
+    }
+
+
+    public function showContact()
+    {
+        $languageCode = session('user_language' , 'fr');
+        $categories = $this->getCategories($languageCode);
+
+        return view('HomeStore.page-contact', compact('categories', 'languageCode'));
     }
 
     private function getSortOptions()

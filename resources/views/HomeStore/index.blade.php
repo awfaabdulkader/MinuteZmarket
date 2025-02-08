@@ -91,6 +91,36 @@
           </section>
 
           <!--End hero-->
+          <section class="popular-categories section-padding">
+            <div class="container">
+              <div class="section-title">
+                <div class="title">
+                  <h3>{{__('home.shop_by_categories')}}</h3>
+                  <a class="show-all"  href="{{ route('products.all' )}}">
+                    {{__('home.all_categories')}}
+                    <i class="fi-rs-angle-right"></i>
+                  </a>
+                </div>
+                <div class="slider-arrow slider-arrow-2 flex-right carausel-8-columns-arrow"
+                  id="carausel-8-columns-arrows"></div>
+              </div>
+              <div class="carausel-8-columns-cover position-relative">
+                <div class="carausel-8-columns" id="carausel-8-columns">
+                  @foreach ($categories as $category )
+                  <div class="card-1">
+                    <figure class="img-hover-scale overflow-hidden">
+                      <a  href="{{ route('store.category', $category->id) }} "><img src="{{ asset('storage/' . $category->image) }}" alt="" /></a>
+                    </figure>
+                    <h6>
+                      {{ $category->translations->where('language_code', $languageCode)->first()->name ?? $category->name }}
+                    </a>
+                    </h6>
+                  </div>
+                  @endforeach
+                </div>
+              </div>
+            </div>
+          </section>
          
           <section class="banners mb-25">
             <div class="container">
@@ -309,36 +339,7 @@
           </div>
         </section>
 
-        <section class="popular-categories section-padding">
-          <div class="container">
-            <div class="section-title">
-              <div class="title">
-                <h3>{{__('home.shop_by_categories')}}</h3>
-                <a class="show-all"  href="{{ route('products.all' )}}">
-                  {{__('home.all_categories')}}
-                  <i class="fi-rs-angle-right"></i>
-                </a>
-              </div>
-              <div class="slider-arrow slider-arrow-2 flex-right carausel-8-columns-arrow"
-                id="carausel-8-columns-arrows"></div>
-            </div>
-            <div class="carausel-8-columns-cover position-relative">
-              <div class="carausel-8-columns" id="carausel-8-columns">
-                @foreach ($categories as $category )
-                <div class="card-1">
-                  <figure class="img-hover-scale overflow-hidden">
-                    <a  href="{{ route('store.category', $category->id) }} "><img src="{{ asset('storage/' . $category->image) }}" alt="" /></a>
-                  </figure>
-                  <h6>
-                    {{ $category->translations->where('language_code', $languageCode)->first()->name ?? $category->name }}
-                  </a>
-                  </h6>
-                </div>
-                @endforeach
-              </div>
-            </div>
-          </div>
-        </section>
+     
       
 
         <section class="hero-3 position-relative align-items">

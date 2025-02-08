@@ -23,7 +23,7 @@
     </button>
     <div class="dropdown-menu" aria-labelledby="languageDropdown">
         <a class="dropdown-item py-2 px-4" href="{{ route('home.language', ['languageCode' => 'fr']) }}">
-          <img src="{{ asset('assets/store/imgs/flag-fr.png') }}" alt="Spanish flag" class="flag-icon me-2">
+          <img src="{{ asset('assets/store/imgs/theme/flag-fr.png') }}" alt="Spanish flag" class="flag-icon me-2">
 
             Français
         </a>
@@ -131,10 +131,10 @@
                 
 
                   <li>
-                    <a href="page-about.html">{{ __('header.about') }}</a>
+                    <a href="{{route('store/about')}}">{{ __('header.about') }}</a>
                   </li>
                   <li>
-                    <a href="page-contact.html">{{ __('header.contact') }}</a>
+                    <a href="{{route('store/contact')}}">{{ __('header.contact') }}</a>
                   </li>
                 </ul>
               </nav>

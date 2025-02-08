@@ -142,18 +142,27 @@
                       </div>
                       <!--end card-header-->
                       <div class="card-body pt-0">
-                        <div class="d-grid">
-                          <p class="text-muted">
-                            Veuillez choisir une image de votre produit .jpg ou .png entre 100x100 et 500x500
-                          </p>
-                          <div
-                            class="preview-box d-block justify-content-center rounded border-dashed border-theme-color overflow-hidden p-3">
-                          </div>
-                          <input type="file" id="input-file" name="image_url" accept="image/*"
-                            onchange="{handleChange()}" hidden />
-                          <label class="btn-upload btn btn-primary mt-3"   for="input-file">Upload Image</label>
+                        <div class="card-body">
+                            
+                    
+                            <div class="d-grid">
+                                <p class="text-muted">
+                                    Veuillez choisir une image de votre produit .jpg ou .png entre 100x100 et 500x500
+                                </p>
+                                <div class="preview-box d-block justify-content-center rounded border-dashed border-theme-color overflow-hidden p-3">
+                                  <!-- Image Preview -->
+                            <img id="preview-image" src="" alt="Product Image" style="max-width: 200px; display: none;">
+                                </div>
+                    
+                                <!-- File Input -->
+                                <input type="file" id="input-file" name="image_url" accept="image/*" hidden />
+                                <label class="btn-upload btn btn-primary mt-3" for="input-file">Upload Image</label>
+                            </div>
                         </div>
-                      </div>
+                    </div>
+                    
+            
+                    
                       <!--end card-body-->
                     </div>
                     <!--end card-->
